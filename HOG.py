@@ -2,7 +2,7 @@ import sys
 import dlib
 from skimage import io
 import numpy as np
-from PIL import Images
+from PIL import Image
 
 # Take the image file name from the command line
 file_name = sys.argv[1]
