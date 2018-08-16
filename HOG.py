@@ -2,10 +2,17 @@ import sys
 import dlib
 from skimage import io
 import numpy as np
+from PIL import Images
 
 # Take the image file name from the command line
-#file_name = sys.argv[1]
-file_name = '/home/czarek/Pobrane/obraz.jpg'
+file_name = sys.argv[1]
+print (file_name)
+#file_name = '/home/pawel/Documents/CezWorkspac1/FaceBot/zjeby.jpg'
+
+im = Image.open(file_name)
+rgb_im = im.convert('RGB')
+file_name = file_name.split('.')[0] + '.jpg'
+rgb_im.save(file_name)
 
 # Create a HOG face detector using the built-in dlib class
 face_detector = dlib.get_frontal_face_detector()
